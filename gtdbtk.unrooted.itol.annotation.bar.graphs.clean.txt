@@ -1,0 +1,172 @@
+DATASET_MULTIBAR
+#In multi-value bar charts, each ID is associated to multiple numeric values, which are displayed as a stacked or aligned bar chart
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file.
+#SEPARATOR TAB
+#SEPARATOR SPACE
+SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL,multi bar chart
+
+#dataset color (can be changed later)
+COLOR,#0072B2
+
+#define colors for each individual field column (use hexadecimal, RGB or RGBA notation; if using RGB/RGBA, COMMA cannot be used as SEPARATOR)
+FIELD_COLORS,#0072B2,#E69F00
+
+#field labels
+FIELD_LABELS,annotated,unknown
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#dataset scale: you can simply set the values where the scale will be drawn
+DATASET_SCALE,2000,4000,6000,8000,10000
+#or you can specify value, label, color, width, style and label size factor for each scale line (dash separated, format: VALUE-LABEL-COLOR-WIDTH-DASHED-LABEL_SCALE_FACTOR))
+#DATASET_SCALE,2000-2k line-#0000ff-5-1-1,10000-line at 10k-#ff0000-1-0-2,20000-3rd line-#00ff00-5-1-1
+
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#To order legend entries horizontally instead of vertically, set LEGEND_HORIZONTAL to 1
+#Shape should be a number between 1 and 12, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+#7: solid line
+#8: dashed line
+#9: dotted line
+#10:arrow left
+#11:arrow right
+#12:bidirectional arrow
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_SCALE,1
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_HORIZONTAL,0
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+#maximum width
+WIDTH,250
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+MARGIN,10
+
+#use a logarithmic scale to display the bars
+#LOG_SCALE,0
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL,0
+
+#show dashed lines between leaf labels and the dataset
+DASHED_LINES,1
+
+#bar height factor; Default bar height will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+#HEIGHT_FACTOR,1
+
+#Bars are aligned to the node lines by default. Using BAR_SHIFT, you can move them all up/down by a fixed amount
+#BAR_SHIFT,0
+
+#align individual fields; if set to 1, individual bar charts will not be stacked
+#ALIGN_FIELDS,0
+
+#stack individual fields; if set to 1, individual bar chart fields will be displayed next to each other
+#SIDE_STACKED,0
+
+#display bars directly on the tree branches, instead of outside the tree. Cannot be combined with aligned or side stacked fields.
+ON_BRANCH,0
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the bars
+#BORDER_WIDTH,0
+
+#border color; used when BORDER_WIDTH is above 0
+#BORDER_COLOR,#0000ff
+
+#Display individual values inside the bars
+#SHOW_VALUE,0
+
+#Position of the value label, relative to the bar (when SHOW_VALUE is set to 1)
+#can be one of: left, center, right
+#LABEL_POSITION,right
+
+#shift all labels horizontally and/or vertically
+#LABEL_SHIFT_X,0
+#LABEL_SHIFT_Y,0
+
+#multiply the size of all labels by this factor
+#LABEL_SIZE_FACTOR,1
+
+#color of the value labels. Ignored if LABEL_AUTO_COLOR is 1
+#BAR_LABEL_COLOR,#0000ff
+
+#if set to 1, calculate the value label color automatically, based on the darkness of the bar. Labels will be white or black.
+#LABEL_AUTO_COLOR,1
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+CA18,7157,1509
+SITR,7085,1507
+CA04,7063,1516
+CA17,6905,1487
+CA08,6869,1498
+CA13,6763,1478
+635G,6803,1397
+CA16,6711,1463
+CA03,6707,1458
+CA20,6666,1475
+CA14,6738,1400
+CA02,6711,1426
+CA19,6651,1458
+CA09,6631,1465
+CATR,6604,1468
+CA10,6647,1423
+SIAR,6656,1408
+495G,6588,1463
+CA05,6571,1449
+CA01,6546,1438
+CA15,6571,1370
+CA06,6306,1407
+ROSR,6234,1413
+CA12,6216,1387
+HAIR,6170,1374
+195G,6156,1325
+445G,6060,1380
+MARR,6076,1363
+045G,5985,1379
+655G,6031,1329
+CA11,5973,1318
+CORR,5925,1335
+CELR,5655,1244
+BRYR,5597,1290
+CA07,5551,1207
+AMER,5509,1234
+TRIR,5523,1186
+535G,5140,1182
+ORYR,5127,1110
+665G,4973,1085
+

@@ -1,0 +1,171 @@
+DATASET_MULTIBAR
+#In multi-value bar charts, each ID is associated to multiple numeric values, which are displayed as a stacked or aligned bar chart
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file.
+#SEPARATOR TAB
+#SEPARATOR SPACE
+SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL,multi bar chart
+
+#dataset color (can be changed later)
+COLOR,#ff0000
+
+#define colors for each individual field column (use hexadecimal, RGB or RGBA notation; if using RGB/RGBA, COMMA cannot be used as SEPARATOR)
+FIELD_COLORS,#440154,#482475,#414487,#355f8d,#2a788e,#21918c,#219c88,#22a884,#44bf70,#7ad151,#bddf26,#fde725
+
+#field labels
+FIELD_LABELS,ACCD,IAA_&_PAA,flagellum_organisation,Type_IV_pilus,PGB_&_DUF916,T2SS_&_T4SS,T7SS,glucanases,chitinase_&_chitin-binding,arabinoxylanases,pathogenesis_&_immune_evasion,stress_&_host tolerance
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#dataset scale: you can simply set the values where the scale will be drawn
+DATASET_SCALE,2000000,4000000,6000000,8000000,10000000
+#or you can specify value, label, color, width, style and label size factor for each scale line (dash separated, format: VALUE-LABEL-COLOR-WIDTH-DASHED-LABEL_SCALE_FACTOR))
+#DATASET_SCALE,2000-2k line-#0000ff-5-1-1,10000-line at 10k-#ff0000-1-0-2,20000-3rd line-#00ff00-5-1-1
+
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#To order legend entries horizontally instead of vertically, set LEGEND_HORIZONTAL to 1
+#Shape should be a number between 1 and 12, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+#7: solid line
+#8: dashed line
+#9: dotted line
+#10:arrow left
+#11:arrow right
+#12:bidirectional arrow
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_SCALE,1
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_HORIZONTAL,0
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+#maximum width
+WIDTH,250
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+MARGIN,10
+
+#use a logarithmic scale to display the bars
+#LOG_SCALE,0
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL,0
+
+#show dashed lines between leaf labels and the dataset
+DASHED_LINES,1
+
+#bar height factor; Default bar height will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+#HEIGHT_FACTOR,1
+
+#Bars are aligned to the node lines by default. Using BAR_SHIFT, you can move them all up/down by a fixed amount
+#BAR_SHIFT,0
+
+#align individual fields; if set to 1, individual bar charts will not be stacked
+ALIGN_FIELDS,1
+
+#stack individual fields; if set to 1, individual bar chart fields will be displayed next to each other
+#SIDE_STACKED,0
+
+#display bars directly on the tree branches, instead of outside the tree. Cannot be combined with aligned or side stacked fields.
+ON_BRANCH,0
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the bars
+#BORDER_WIDTH,0
+
+#border color; used when BORDER_WIDTH is above 0
+#BORDER_COLOR,#0000ff
+
+#Display individual values inside the bars
+#SHOW_VALUE,0
+
+#Position of the value label, relative to the bar (when SHOW_VALUE is set to 1)
+#can be one of: left, center, right
+#LABEL_POSITION,right
+
+#shift all labels horizontally and/or vertically
+#LABEL_SHIFT_X,0
+#LABEL_SHIFT_Y,0
+
+#multiply the size of all labels by this factor
+#LABEL_SIZE_FACTOR,1
+
+#color of the value labels. Ignored if LABEL_AUTO_COLOR is 1
+#BAR_LABEL_COLOR,#0000ff
+
+#if set to 1, calculate the value label color automatically, based on the darkness of the bar. Labels will be white or black.
+#LABEL_AUTO_COLOR,1
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+AMER,2,4,6,4,5,8,0,17,11,1,1,3
+ROSR,1,7,6,7,4,5,4,22,9,4,1,5
+495G,0,3,3,4,5,6,4,24,15,4,1,4
+BRYR,0,5,7,4,4,5,5,19,9,4,2,4
+SIAR,0,2,4,6,3,2,4,21,15,6,1,5
+635G,0,2,7,5,3,2,4,23,12,6,1,5
+CATR,0,2,3,5,6,5,4,23,14,5,1,4
+SITR,0,2,5,6,3,5,5,26,15,5,1,5
+655G,0,4,4,5,5,3,4,22,9,5,1,4
+CELR,1,4,7,5,6,5,0,18,10,2,1,3
+195G,0,3,6,5,4,8,4,18,11,6,0,4
+045G,0,5,7,5,10,7,0,18,8,2,2,4
+CORR,0,1,3,6,9,5,0,15,14,1,3,4
+HAIR,0,6,8,4,4,5,4,20,12,6,1,5
+535G,1,3,7,5,4,2,4,16,9,4,1,3
+TRIR,1,4,2,4,5,4,0,17,11,2,1,3
+MARR,1,5,8,7,4,9,4,20,16,4,1,4
+445G,0,6,5,5,4,2,4,23,12,5,2,4
+ORYR,0,1,7,4,10,5,0,14,7,2,3,4
+665G,1,2,8,6,6,2,0,16,9,2,1,3
+CA01,0,2,2,4,5,2,4,24,16,7,1,4
+CA14,0,3,5,6,5,6,4,24,15,7,1,5
+CA03,0,2,4,4,5,7,4,23,16,6,1,4
+CA09,0,2,3,5,5,5,4,25,16,6,1,4
+CA15,1,3,6,5,6,5,5,19,12,6,1,6
+CA04,1,3,4,6,4,8,5,26,15,8,1,5
+CA10,1,3,6,5,5,5,4,25,15,6,2,5
+CA16,0,2,4,5,5,8,4,24,17,6,1,4
+CA05,0,2,3,4,5,5,4,26,18,6,1,4
+CA11,0,2,6,7,4,6,4,22,15,5,2,4
+CA17,1,3,6,5,5,5,4,25,14,6,1,5
+CA06,1,7,5,5,5,3,4,21,9,6,2,5
+CA12,1,7,5,5,4,3,4,21,9,6,2,5
+CA18,1,4,3,6,4,8,5,32,15,10,1,5
+CA07,1,4,6,7,6,5,0,17,11,2,1,3
+CA02,1,2,4,7,4,2,4,23,14,10,1,5
+CA19,0,2,4,5,5,10,4,23,16,6,1,4
+CA08,1,4,2,6,4,5,5,27,15,8,1,5
+CA13,0,1,4,5,5,11,4,26,16,7,1,4
+CA20,0,2,4,4,6,5,4,27,16,6,1,4
